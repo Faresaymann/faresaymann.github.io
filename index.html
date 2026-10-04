@@ -22,42 +22,54 @@
     <!-- External Stylesheet -->
     <link rel="stylesheet" href="styles.css">
 
-    <!-- Tailwind CSS Config Script -->
-    <script>
-        tailwind.config = {
-            darkMode: 'class',
-            theme: {
-                extend: {
-                    screens: {
-                        '3xl': '1920px',
-                        '4xl': '2560px',
-                    },
-                    colors: {
-                        skyLight: '#EBF4F6',
-                        skyCloud: '#F7FAFC',
-                        vermilion: '#C0392B',
-                        sunGold: '#D4AC0D',
-                        bambooGreen: '#27AE60',
-                        washiPaper: '#FAFAFA',
-                        slateInk: '#1C2833',
-                        darkNavy: '#0b0f19',
-                        darkCard: '#121826',
-                        softPink: '#FADBD8',
-                        indigoNight: '#2C3E50',
-                    },
-                    fontFamily: {
-                        jpSerif: ['"Noto Serif JP"', 'serif'],
-                        jpSans: ['"Zen Kaku Gothic New"', 'sans-serif'],
-                        cinzel: ['Cinzel', 'serif']
-                    },
-                    backgroundImage: {
-                        'seigaiha': "url(\"data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='80' height='40' viewBox='0 0 80 40'%3E%3Cpath d='M0 40a40 40 0 0 1 40-40 40 40 0 0 1 40 40H70A30 30 0 0 0 40 10 30 30 0 0 0 10 40H0z' fill='%23d0e1e9' fill-opacity='0.25'/%3E%3C/svg%3E\")",
-                        'asanoha': "url(\"data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='60' height='60' viewBox='0 0 60 60'%3E%3Cpath d='M30 0 L60 30 L30 60 L0 30 Z M30 0 L30 60 M0 30 L60 30' stroke='%23C0392B' stroke-opacity='0.08' stroke-width='1' fill='none'/%3E%3C/svg%3E\")"
-                    }
-                }
-            }
-        }
-    </script>
+    <!-- Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-YOUR_ID"></script>
+<script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-VPSNS87RCG');
+</script>
+
+<!-- Tailwind CSS Config Script -->
+<script>
+    tailwind.config = {
+        darkMode: 'class',
+        theme: {
+            extend: {
+                screens: {
+                    '3xl': '1920px',
+                    '4xl': '2560px',
+                },
+                colors: {
+                    skyLight: '#EBF4F6',
+                    skyCloud: '#F7FAFC',
+                    vermilion: '#C0392B',
+                    sunGold: '#D4AC0D',
+                    bambooGreen: '#27AE60',
+                    washiPaper: '#FAFAFA',
+                    slateInk: '#1C2833',
+                    darkNavy: '#0b0f19',
+                    darkCard: '#121826',
+                    softPink: '#FADBD8',
+                    indigoNight: '#2C3E50',
+                },
+                fontFamily: {
+                    jpSerif: ['"Noto Serif JP"', 'serif'],
+                    jpSans: ['"Zen Kaku Gothic New"', 'sans-serif'],
+                    cinzel: ['Cinzel', 'serif']
+                },
+                backgroundImage: {
+                    'seigaiha': "url(\"data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='80' height='40' viewBox='0 0 80 40'%3E%3Cpath d='M0 40a40 40 0 0 1 40-40 40 40 0 0 1 40 40H70A30 30 0 0 0 40 10 30 30 0 0 0 10 40H0z' fill='%23d0e1e9' fill-opacity='0.25'/%3E%3C/svg%3E\")",
+                    'asanoha': "url(\"data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='60' height='60' viewBox='0 0 60 60'%3E%3Cpath d='M30 0 L60 30 L30 60 L0 30 Z M30 0 L30 60 M0 30 L60 30' stroke='%23C0392B' stroke-opacity='0.08' stroke-width='1' fill='none'/%3E%3C/svg%3E\")" 
+                } 
+            } 
+        } 
+    }
+</script>
+
+
 </head>
 <!-- Custom Japanese Shrine Modal Alert -->
 <div id="jp-modal" class="fixed inset-0 z-50 flex items-center justify-center bg-slate-900/60 backdrop-blur-sm opacity-0 pointer-events-none transition-all duration-300">
