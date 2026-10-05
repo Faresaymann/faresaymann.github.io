@@ -1,7 +1,7 @@
 /* Custom Japanese Manga / Aesthetics Styling */
 body {
     font-family: 'Zen Kaku Gothic New', sans-serif;
-    transition: background-color 0.3s ease, color 0.3s ease;
+    transition: background-color 0.15s ease, color 0.15s ease;
 }
 
 #sakura-canvas {
@@ -19,14 +19,14 @@ body {
     border: 3px solid #C0392B;
     color: #C0392B;
     border-radius: 8px;
-    padding: 4px 10px;
+    padding: 3px 8px;
     font-family: 'Noto Serif JP', serif;
     font-weight: 900;
     display: inline-block;
     transform: rotate(-6deg);
     box-shadow: 0 0 1px rgba(192, 57, 43, 0.5);
     background: rgba(255, 235, 235, 0.4);
-    letter-spacing: 2px;
+    letter-spacing: 1.5px;
 }
 
 .dark .hanko-stamp {
@@ -35,31 +35,49 @@ body {
     border-color: #ff6b6b;
 }
 
-/* Glassmorphism Cards */
+/* Optimized Mobile & Desktop Dynamic Cards */
 .bright-card {
-    background: rgba(255, 255, 255, 0.92);
+    background: rgba(255, 255, 255, 0.95);
     backdrop-filter: blur(12px);
     border: 1px solid rgba(220, 225, 230, 0.8);
-    box-shadow: 0 10px 30px -5px rgba(28, 40, 51, 0.08);
-    transition: transform 0.4s ease, box-shadow 0.4s ease, background-color 0.4s ease;
+    box-shadow: 0 4px 20px -2px rgba(28, 40, 51, 0.06);
+    transition: transform 0.15s cubic-bezier(0, 0, 0.2, 1), 
+                box-shadow 0.15s cubic-bezier(0, 0, 0.2, 1), 
+                border-color 0.15s ease !important;
+    will-change: transform, box-shadow;
 }
 
 .dark .bright-card {
-    background: rgba(18, 24, 38, 0.85);
+    background: rgba(18, 24, 38, 0.88);
     border-color: rgba(255, 255, 255, 0.08);
-    box-shadow: 0 10px 30px -5px rgba(0, 0, 0, 0.5);
+    box-shadow: 0 4px 20px -2px rgba(0, 0, 0, 0.4);
 }
 
-.bright-card:hover {
-    transform: translateY(-4px);
-    box-shadow: 0 18px 36px -5px rgba(192, 57, 43, 0.2);
+/* Fast Hover Pop for Desktop Mice */
+@media (hover: hover) {
+    .bright-card:hover {
+        transform: translateY(-8px) scale(1.01) !important;
+        border-color: #C0392B !important;
+        box-shadow: 0 18px 36px -6px rgba(192, 57, 43, 0.3) !important;
+    }
+    
+    .dark .bright-card:hover {
+        border-color: #ff6b6b !important;
+        box-shadow: 0 18px 36px -6px rgba(255, 107, 107, 0.25) !important;
+    }
 }
 
-/* Delayed & Smoother Scroll Reveal Animations */
+/* Mobile Touch Active Lift (prevent touch-scroll glitching) */
+.bright-card:active {
+    transform: translateY(-4px) !important;
+    border-color: #C0392B !important;
+}
+
+/* Fast Scroll Reveal Animations */
 .reveal-on-scroll {
     opacity: 0;
-    transform: translateY(40px);
-    transition: opacity 1.2s cubic-bezier(0.22, 1, 0.36, 1), transform 1.2s cubic-bezier(0.22, 1, 0.36, 1);
+    transform: translateY(20px);
+    transition: opacity 0.35s cubic-bezier(0, 0, 0.2, 1), transform 0.35s cubic-bezier(0, 0, 0.2, 1);
     will-change: opacity, transform;
 }
 
@@ -68,14 +86,14 @@ body {
     transform: translateY(0);
 }
 
-/* Increased Stagger Delays for Grid Children */
-.delay-1 { transition-delay: 0.2s; }
-.delay-2 { transition-delay: 0.4s; }
-.delay-3 { transition-delay: 0.6s; }
+/* Snappy Stagger Delays for Grid Elements */
+.delay-1 { transition-delay: 0.05s; }
+.delay-2 { transition-delay: 0.1s; }
+.delay-3 { transition-delay: 0.15s; }
 
 /* Japanese Scroll Custom Scrollbar */
 ::-webkit-scrollbar {
-    width: 10px;
+    width: 8px;
 }
 
 ::-webkit-scrollbar-track {
@@ -88,7 +106,7 @@ body {
 
 ::-webkit-scrollbar-thumb {
     background: #C0392B;
-    border-radius: 5px;
+    border-radius: 4px;
 }
 
 /* Equalizer Bars Animation */
@@ -104,7 +122,7 @@ body {
 
 @keyframes bounce {
     0% { height: 4px; }
-    100% { height: 20px; }
+    100% { height: 18px; }
 }
 
 .paused .bar {
